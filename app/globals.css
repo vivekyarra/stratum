@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #0a0e1a;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 14, 26, 0.2), #0a0e1a 92%),
+    #0a0e1a;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.maplibregl-map {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.maplibregl-popup-content {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 8px;
+  background: rgba(30, 36, 51, 0.96);
+  color: #f8fafc;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.42);
+}
+
+.maplibregl-popup-tip {
+  border-top-color: rgba(30, 36, 51, 0.96) !important;
+  border-bottom-color: rgba(30, 36, 51, 0.96) !important;
+}
+
+.city-grid {
+  background-image:
+    linear-gradient(rgba(248, 250, 252, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(248, 250, 252, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline::after {
+  animation: scan 4.8s linear infinite;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.28), transparent);
+  content: "";
+  height: 100%;
+  left: -50%;
+  position: absolute;
+  top: 0;
+  width: 45%;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(330%);
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    opacity: 0.85;
+    transform: scale(0.9);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: #7c3aed;
+}

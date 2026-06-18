@@ -1,0 +1,12 @@
+.next
+node_modules
+dist
+.env
+.env*.local
+coverage
+*.log
+*.tsbuildinfo
+public/seed-preview.json
+scripts/generated-seed-reports.json
+
+.vercel

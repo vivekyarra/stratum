@@ -1,0 +1,27 @@
+{
+  "TableName": "stratum-reports",
+  "BillingMode": "PAY_PER_REQUEST",
+  "AttributeDefinitions": [
+    { "AttributeName": "geohash", "AttributeType": "S" },
+    { "AttributeName": "timestamp_id", "AttributeType": "S" },
+    { "AttributeName": "city_id", "AttributeType": "S" }
+  ],
+  "KeySchema": [
+    { "AttributeName": "geohash", "KeyType": "HASH" },
+    { "AttributeName": "timestamp_id", "KeyType": "RANGE" }
+  ],
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "city_id-time",
+      "KeySchema": [
+        { "AttributeName": "city_id", "KeyType": "HASH" },
+        { "AttributeName": "timestamp_id", "KeyType": "RANGE" }
+      ],
+      "Projection": { "ProjectionType": "ALL" }
+    }
+  ],
+  "TimeToLiveSpecification": {
+    "AttributeName": "ttl",
+    "Enabled": true
+  }
+}
