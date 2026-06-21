@@ -16,6 +16,7 @@
     "@aws-sdk/client-rds-data": "^3.600.0",
     "@aws-sdk/lib-dynamodb": "^3.600.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.40.0",
     "lucide-react": "^0.468.0",
     "maplibre-gl": "^4.7.1",
     "next": "14.2.35",
